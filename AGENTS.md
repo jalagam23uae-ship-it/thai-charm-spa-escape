@@ -28,3 +28,5 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+- Editable spa business details (contact, WhatsApp) live in one config module; actions render disabled while values are null. Why: no invented contact data ships.
