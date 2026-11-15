@@ -19,6 +19,10 @@ import footRitual from "@/assets/foot-ritual.jpg";
 import candle from "@/assets/candle-ambiance.jpg";
 import garden from "@/assets/spa-garden.jpg";
 import massageDetail from "@/assets/massage-detail.jpg";
+import petalBath from "@/assets/petal-bath.jpg";
+import wellnessTea from "@/assets/wellness-tea.jpg";
+import headMassage from "@/assets/head-massage.jpg";
+import zenFountain from "@/assets/zen-fountain.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -69,6 +73,10 @@ const gallery = [
   { src: about, label: "Spa details" },
   { src: stone, label: "Hot stone therapy" },
   { src: aroma, label: "Aromatherapy" },
+  { src: petalBath, label: "Floral bath ritual" },
+  { src: wellnessTea, label: "Wellness tea" },
+  { src: headMassage, label: "Head massage" },
+  { src: zenFountain, label: "Garden fountain" },
 ];
 
 const faqs = [
