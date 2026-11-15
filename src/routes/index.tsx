@@ -27,6 +27,18 @@ import swedish from "@/assets/swedish-massage.jpg";
 import sports from "@/assets/sports-massage.jpg";
 import triggerPoint from "@/assets/trigger-point.jpg";
 import balinese from "@/assets/balinese-massage.jpg";
+import spaReception from "@/assets/spa-reception.jpg";
+import spaEssentials from "@/assets/spa-essentials.jpg";
+import meditationCorner from "@/assets/meditation-corner.jpg";
+import steamRoom from "@/assets/steam-room.jpg";
+import spaPool from "@/assets/spa-pool.jpg";
+import herbalBalls from "@/assets/herbal-compress-balls.jpg";
+import spaHallway from "@/assets/spa-hallway.jpg";
+import welcomeDrink from "@/assets/welcome-drink.jpg";
+import couplesSuite from "@/assets/couples-suite.jpg";
+import handRitual from "@/assets/hand-ritual.jpg";
+import gardenPath from "@/assets/garden-path.jpg";
+import loungeTea from "@/assets/lounge-tea.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -85,6 +97,18 @@ const gallery = [
   { src: wellnessTea, label: "Wellness tea" },
   { src: headMassage, label: "Head massage" },
   { src: zenFountain, label: "Garden fountain" },
+  { src: spaReception, label: "Reception" },
+  { src: spaEssentials, label: "Spa essentials" },
+  { src: meditationCorner, label: "Meditation corner" },
+  { src: steamRoom, label: "Herbal steam room" },
+  { src: spaPool, label: "Spa pool" },
+  { src: herbalBalls, label: "Herbal compress" },
+  { src: spaHallway, label: "Treatment wing" },
+  { src: welcomeDrink, label: "Welcome drink" },
+  { src: couplesSuite, label: "Couples suite" },
+  { src: handRitual, label: "Hand ritual" },
+  { src: gardenPath, label: "Garden path" },
+  { src: loungeTea, label: "Tea lounge" },
 ];
 
 const faqs = [
