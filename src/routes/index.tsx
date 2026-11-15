@@ -23,6 +23,10 @@ import petalBath from "@/assets/petal-bath.jpg";
 import wellnessTea from "@/assets/wellness-tea.jpg";
 import headMassage from "@/assets/head-massage.jpg";
 import zenFountain from "@/assets/zen-fountain.jpg";
+import swedish from "@/assets/swedish-massage.jpg";
+import sports from "@/assets/sports-massage.jpg";
+import triggerPoint from "@/assets/trigger-point.jpg";
+import balinese from "@/assets/balinese-massage.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -51,6 +55,10 @@ const treatments: Treatment[] = [
   { name: "Foot Reflexology", description: "Focused pressure on the feet and lower legs in a quiet, reclined setting.", duration: null, price: null, image: reflex, alt: "Therapist giving a foot massage on a towel-covered bed" },
   { name: "Hot Stone Massage", description: "Smooth, warmed stones glide alongside hands-on massage for a deeply calming session.", duration: null, price: null, image: stone, alt: "Smooth massage stones beside folded towels and a ceramic bowl" },
   { name: "Couples Massage", description: "Share a relaxing session side by side in the same peaceful room.", duration: null, price: null, image: couples, alt: "Two prepared massage beds in a calm room (illustrative concept)" },
+  { name: "Swedish Massage", description: "Long, flowing strokes, kneading and light tapping with massage oil — ideal for beginners, stress relief and full-body relaxation.", duration: null, price: null, image: swedish, alt: "Therapist giving a Swedish massage to a towel-covered client" },
+  { name: "Sports Massage", description: "Focused work on areas prone to overuse or strain, with stretching and medium-to-firm pressure — for active people, injury prevention and recovery.", duration: null, price: null, image: sports, alt: "Therapist stretching and massaging an athlete's leg" },
+  { name: "Trigger Point Therapy", description: "Direct, concentrated pressure on specific muscle knots — often in the neck, shoulders or back — to release tight spots.", duration: null, price: null, image: triggerPoint, alt: "Therapist applying focused pressure to a client's shoulder" },
+  { name: "Balinese Massage", description: "Gentle stretching, acupressure, reflexology and aromatherapy with warm oils to calm the nervous system and restore energy.", duration: null, price: null, image: balinese, alt: "Therapist giving a Balinese massage with warm oil in a tropical spa room" },
 ];
 
 // OWNER: replace with real packages, or remove this section and its nav item if none.
