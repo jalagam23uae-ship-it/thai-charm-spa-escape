@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { Menu, X, Phone, Mail, MapPin, Clock, MessageCircle, Leaf, ArrowDown } from "lucide-react";
+import { Menu, X, Phone, Mail, MapPin, Clock, MessageCircle, Leaf, ArrowDown, Facebook, Instagram, Twitter } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { contact, whatsappLink, treatmentMessage, type Treatment } from "@/lib/spa-config";
 import heroWide from "@/assets/hero-wide.jpg";
@@ -347,23 +347,55 @@ function Index() {
         </section>
       </main>
 
-      <footer className="border-t border-border bg-secondary py-12">
-        <div className="mx-auto grid max-w-6xl gap-8 px-5 md:grid-cols-3">
-          <div>
-            <p className="font-display text-2xl font-semibold text-primary">Thai Charm Spa</p>
-            <p className="mt-2 text-sm text-muted-foreground">Relax. Restore. Reconnect.</p>
+      <footer className="bg-primary text-primary-foreground">
+        <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="space-y-4">
+            <p className="font-display text-2xl font-semibold">Thai Charm Spa</p>
+            <p className="text-sm text-primary-foreground/80">Relax. Restore. Reconnect. A calm escape for body and mind, rooted in traditional Thai wellness.</p>
+            <div className="flex gap-3">
+              {[
+                { icon: Facebook, label: "Facebook" },
+                { icon: Instagram, label: "Instagram" },
+                { icon: Twitter, label: "Twitter" },
+              ].map(({ icon: Icon, label }) => (
+                <span key={label} aria-label={`${label} (link to be added)`} title={`${label} — link to be added`} className="flex h-9 w-9 items-center justify-center rounded-full border border-primary-foreground/30 text-primary-foreground/70">
+                  <Icon className="h-4 w-4" aria-hidden />
+                </span>
+              ))}
+            </div>
           </div>
-          <nav aria-label="Footer" className="grid grid-cols-2 gap-2 text-sm">
-            {nav.map(([l, id]) => <a key={id} href={`#${id}`} className="text-muted-foreground hover:text-primary">{l}</a>)}
+          <nav aria-label="Footer" className="space-y-3">
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary-foreground/70">Explore</p>
+            <ul className="grid grid-cols-2 gap-2 text-sm">
+              {nav.map(([l, id]) => (
+                <li key={id}><a href={`#${id}`} className="text-primary-foreground/80 transition-colors hover:text-primary-foreground">{l}</a></li>
+              ))}
+            </ul>
           </nav>
-          <div className="space-y-1 text-sm text-muted-foreground">
-            {contact.address && <p>{contact.address}</p>}
-            {contact.phone && <p>{contact.phone}</p>}
-            {contact.email && <p>{contact.email}</p>}
-            {!contact.address && !contact.phone && !contact.email && <Placeholder>Contact details to be added</Placeholder>}
+          <div className="space-y-3">
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary-foreground/70">Popular Treatments</p>
+            <ul className="space-y-2 text-sm text-primary-foreground/80">
+              {treatments.slice(0, 5).map((t) => (
+                <li key={t.name}><a href="#treatments" className="transition-colors hover:text-primary-foreground">{t.name}</a></li>
+              ))}
+            </ul>
+          </div>
+          <div className="space-y-3">
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary-foreground/70">Visit Us</p>
+            <ul className="space-y-2 text-sm text-primary-foreground/80">
+              {contact.address && <li className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />{contact.address}</li>}
+              {contact.phone && <li className="flex items-center gap-2"><Phone className="h-4 w-4 shrink-0" aria-hidden />{contact.phone}</li>}
+              {contact.email && <li className="flex items-center gap-2"><Mail className="h-4 w-4 shrink-0" aria-hidden />{contact.email}</li>}
+              {!contact.address && !contact.phone && !contact.email && <li className="text-primary-foreground/60">Address, phone and email to be added</li>}
+            </ul>
           </div>
         </div>
-        <p className="mt-10 text-center text-xs text-muted-foreground">© {new Date().getFullYear()} Thai Charm Spa</p>
+        <div className="border-t border-primary-foreground/15">
+          <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-5 py-5 text-xs text-primary-foreground/60 sm:flex-row">
+            <p>© {new Date().getFullYear()} Thai Charm Spa. All rights reserved.</p>
+            <a href="#home" className="transition-colors hover:text-primary-foreground">Back to top</a>
+          </div>
+        </div>
       </footer>
     </div>
   );
