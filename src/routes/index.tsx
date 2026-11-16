@@ -190,6 +190,35 @@ function SectionHeading({ eyebrow, title, intro }: { eyebrow: string; title: str
   );
 }
 
+// 3D tilt-on-hover wrapper: rotates toward the cursor, springs back on leave.
+// Transform is set inline (no re-renders); reveal animations live on a parent.
+function Tilt({ children, className, max = 7 }: { children: ReactNode; className?: string; max?: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const frame = useRef(0);
+  const onMove = (e: React.MouseEvent) => {
+    const el = ref.current;
+    if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const r = el.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - 0.5;
+    const y = (e.clientY - r.top) / r.height - 0.5;
+    cancelAnimationFrame(frame.current);
+    frame.current = requestAnimationFrame(() => {
+      el.style.transform = `perspective(900px) rotateX(${(-y * max).toFixed(2)}deg) rotateY(${(x * max).toFixed(2)}deg) translateY(-6px)`;
+    });
+  };
+  const onLeave = () => {
+    const el = ref.current;
+    if (!el) return;
+    cancelAnimationFrame(frame.current);
+    el.style.transform = "";
+  };
+  return (
+    <div ref={ref} className={`tilt ${className ?? ""}`} onMouseMove={onMove} onMouseLeave={onLeave}>
+      {children}
+    </div>
+  );
+}
+
 function useReveal() {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -210,9 +239,29 @@ function Index() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const rootRef = useReveal();
+  const heroBgRef = useRef<HTMLDivElement>(null);
+  const heroFrame = useRef(0);
   const wa = whatsappLink(contact.whatsapp);
   const tel = contact.phone ? `tel:${contact.phone.replace(/[^\d+]/g, "")}` : null;
   const mail = contact.email ? `mailto:${contact.email}` : null;
+
+  // Hero background drifts opposite the cursor for a subtle 3D parallax.
+  const onHeroMove = (e: React.MouseEvent) => {
+    const el = heroBgRef.current;
+    if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const x = e.clientX / window.innerWidth - 0.5;
+    const y = e.clientY / window.innerHeight - 0.5;
+    cancelAnimationFrame(heroFrame.current);
+    heroFrame.current = requestAnimationFrame(() => {
+      el.style.transform = `scale(1.08) translate3d(${(-x * 18).toFixed(1)}px, ${(-y * 14).toFixed(1)}px, 0)`;
+    });
+  };
+  const onHeroLeave = () => {
+    const el = heroBgRef.current;
+    if (!el) return;
+    cancelAnimationFrame(heroFrame.current);
+    el.style.transform = "";
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -249,9 +298,20 @@ function Index() {
       </header>
 
       <main>
-        <section id="home" className="relative flex min-h-svh items-center justify-center overflow-hidden">
-          <img src={heroWide} alt="Elegant spa treatment room with two massage beds, warm wood and soft golden light" width={1920} height={1088} className="absolute inset-0 h-full w-full object-cover" />
+        <section id="home" className="relative flex min-h-svh items-center justify-center overflow-hidden" onMouseMove={onHeroMove} onMouseLeave={onHeroLeave}>
+          <div ref={heroBgRef} className="hero-parallax absolute inset-0">
+            <img src={heroWide} alt="Elegant spa treatment room with two massage beds, warm wood and soft golden light" width={1920} height={1088} className="h-full w-full object-cover" />
+          </div>
           <div className="absolute inset-0 bg-hero-overlay" aria-hidden />
+          {/* Floating glass badges add depth above the parallax backdrop */}
+          <div className="glass float-slow absolute left-[8%] top-[28%] z-10 hidden rounded-2xl px-5 py-4 text-hero-foreground shadow-[var(--shadow-soft)] lg:block" aria-hidden>
+            <p className="font-display text-3xl font-semibold">22</p>
+            <p className="text-xs uppercase tracking-widest text-hero-foreground/80">Treatments</p>
+          </div>
+          <div className="glass float-slower absolute bottom-[24%] right-[7%] z-10 hidden rounded-2xl px-5 py-4 text-hero-foreground shadow-[var(--shadow-soft)] lg:block" aria-hidden>
+            <p className="flex items-center gap-2 text-sm font-medium"><Leaf className="h-4 w-4" aria-hidden /> Traditional Thai wellness</p>
+            <p className="mt-1 text-xs text-hero-foreground/80">Calm, unhurried, welcoming</p>
+          </div>
           <div className="relative z-10 mx-auto max-w-3xl px-5 py-32 text-center text-hero-foreground">
             <p className="reveal text-xs font-bold uppercase tracking-[0.35em]">Thai Charm Spa</p>
             <h1 className="reveal mt-6 text-5xl leading-[1.1] md:text-7xl" style={{ transitionDelay: "120ms" }}>Relax. Restore. Reconnect.</h1>
@@ -272,7 +332,9 @@ function Index() {
             <p className="reveal mb-10 text-center"><Placeholder>Preview: proposed treatments — owner to confirm</Placeholder></p>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {treatments.map((t, i) => (
-                <article key={t.name} className="reveal group flex flex-col overflow-hidden rounded-3xl bg-card shadow-[var(--shadow-soft)] transition-transform duration-300 hover:-translate-y-1.5" style={{ transitionDelay: `${(i % 3) * 100}ms` }}>
+                <div key={t.name} className="reveal" style={{ transitionDelay: `${(i % 3) * 100}ms` }}>
+                <Tilt className="h-full">
+                <article className="group flex h-full flex-col overflow-hidden rounded-3xl bg-card shadow-[var(--shadow-soft)]">
                   <div className="overflow-hidden">
                     <img src={t.image} alt={t.alt} width={1024} height={768} loading="lazy" className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   </div>
@@ -290,6 +352,8 @@ function Index() {
                     </div>
                   </div>
                 </article>
+                </Tilt>
+                </div>
               ))}
             </div>
           </div>
@@ -301,12 +365,16 @@ function Index() {
             <p className="reveal mb-10 text-center"><Placeholder>Draft: package details to be supplied by owner</Placeholder></p>
             <div className="grid gap-8 md:grid-cols-3">
               {packages.map((p, i) => (
-                <article key={i} className="reveal rounded-3xl border border-border bg-card p-8 text-center transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[var(--shadow-soft)]" style={{ transitionDelay: `${i * 100}ms` }}>
+                <div key={i} className="reveal" style={{ transitionDelay: `${i * 100}ms` }}>
+                <Tilt max={9} className="h-full">
+                <article className={`h-full rounded-3xl border p-8 text-center ${i === 1 ? "border-primary/30 bg-card shadow-[var(--shadow-soft)]" : "border-border bg-card"}`}>
                   <h3 className="text-2xl">{p.name} {i + 1}</h3>
                   <p className="mt-3 text-sm text-muted-foreground">{p.includes}</p>
                   <p className="mt-6 text-sm">{p.duration ?? <Placeholder>Total duration TBC</Placeholder>}</p>
                   <p className="mt-2 font-bold">{p.price ?? <Placeholder>Price TBC</Placeholder>}</p>
                 </article>
+                </Tilt>
+                </div>
               ))}
             </div>
           </div>
@@ -315,8 +383,10 @@ function Index() {
         <section id="about" className="bg-sage/50 py-24">
           <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 md:grid-cols-2">
             <div className="reveal relative md:justify-self-center">
-              <img src={about} alt="" width={768} height={1024} loading="lazy" className="aspect-[3/4] w-full max-w-md rounded-3xl object-cover shadow-[var(--shadow-soft)]" />
-              <img src={candle} alt="Candles and orchid creating a calm spa ambiance" width={1024} height={1024} loading="lazy" className="absolute -bottom-8 -right-4 hidden w-44 rounded-2xl border-4 border-background object-cover shadow-[var(--shadow-soft)] md:block lg:-right-12 lg:w-56" />
+              <Tilt max={5}>
+                <img src={about} alt="" width={768} height={1024} loading="lazy" className="aspect-[3/4] w-full max-w-md rounded-3xl object-cover shadow-[var(--shadow-soft)]" />
+              </Tilt>
+              <img src={candle} alt="Candles and orchid creating a calm spa ambiance" width={1024} height={1024} loading="lazy" className="float-slow absolute -bottom-8 -right-4 hidden w-44 rounded-2xl border-4 border-background object-cover shadow-[var(--shadow-soft)] md:block lg:-right-12 lg:w-56" />
             </div>
             <div className="reveal">
               <p className="text-xs font-bold uppercase tracking-[0.3em] text-primary">About us</p>
@@ -333,7 +403,7 @@ function Index() {
             <SectionHeading eyebrow="The atmosphere" title="Gallery" intro="A glimpse of the calm that waits for you." />
             <div className="reveal columns-2 gap-4 md:columns-3 [&>figure]:mb-4">
               {gallery.map((g, i) => (
-                <figure key={i} className="group relative break-inside-avoid overflow-hidden rounded-2xl">
+                <figure key={i} className="tilt-hover group relative break-inside-avoid overflow-hidden rounded-2xl">
                   <img src={g.src} alt={`${g.label} — inspiration image`} loading="lazy" width={1024} height={1024} className="w-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   <figcaption className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-2 bg-gradient-to-t from-foreground/60 to-transparent p-4 pt-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     <span className="text-sm font-medium text-hero-foreground">{g.label}</span>

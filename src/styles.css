@@ -172,8 +172,48 @@
     opacity: 1;
     transform: none;
   }
+
+  /* ---- Modern 3D depth layer ---- */
+  /* JS-driven tilt wrapper: transform is set inline, transitions smooth it */
+  .tilt {
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+    will-change: transform;
+  }
+  /* CSS-only tilt for dense grids (gallery) */
+  .tilt-hover {
+    transition: transform 0.45s ease, box-shadow 0.45s ease;
+  }
+  .tilt-hover:hover {
+    transform: perspective(900px) rotateX(3deg) rotateY(-3deg) translateY(-4px);
+    box-shadow: var(--shadow-soft);
+  }
+  /* Frosted-glass floating badge over dark imagery */
+  .glass {
+    background: oklch(1 0 0 / 0.12);
+    border: 1px solid oklch(1 0 0 / 0.28);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  /* Gentle vertical drift for floating elements */
+  .float-slow { animation: float-y 6s ease-in-out infinite; }
+  .float-slower { animation: float-y 8s ease-in-out 1.4s infinite; }
+  @keyframes float-y {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+  }
+  /* Hero background parallax base scale so edges never show while drifting */
+  .hero-parallax {
+    transform: scale(1.08);
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .reveal { opacity: 1; transform: none; transition: none; }
+    .float-slow, .float-slower { animation: none; }
+    .tilt, .tilt-hover, .hero-parallax { transition: none; }
+    .tilt-hover:hover { transform: none; }
   }
   h1, h2, h3 { font-family: var(--font-display); }
   body {
