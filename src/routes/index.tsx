@@ -51,6 +51,18 @@ import bathSalts from "@/assets/bath-salts.jpg";
 import massageTools from "@/assets/massage-tools.jpg";
 import incenseLotus from "@/assets/incense-lotus.jpg";
 import footSoak from "@/assets/foot-soak.jpg";
+import herbalCompressTx from "@/assets/herbal-compress-treatment.jpg";
+import scalpMassage from "@/assets/scalp-massage.jpg";
+import prenatalMassage from "@/assets/prenatal-massage.jpg";
+import facialMassage from "@/assets/facial-massage.jpg";
+import lymphaticMassage from "@/assets/lymphatic-massage.jpg";
+import neckShoulder from "@/assets/neck-shoulder.jpg";
+import bodyScrub from "@/assets/body-scrub.jpg";
+import shiatsuMassage from "@/assets/shiatsu-massage.jpg";
+import postnatalMassage from "@/assets/postnatal-massage.jpg";
+import stretchSession from "@/assets/stretch-session.jpg";
+import herbalWrap from "@/assets/herbal-wrap.jpg";
+import soundBath from "@/assets/sound-bath.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -83,6 +95,18 @@ const treatments: Treatment[] = [
   { name: "Sports Massage", description: "Focused work on areas prone to overuse or strain, with stretching and medium-to-firm pressure — for active people, injury prevention and recovery.", duration: null, price: null, image: sports, alt: "Therapist stretching and massaging an athlete's leg" },
   { name: "Trigger Point Therapy", description: "Direct, concentrated pressure on specific muscle knots — often in the neck, shoulders or back — to release tight spots.", duration: null, price: null, image: triggerPoint, alt: "Therapist applying focused pressure to a client's shoulder" },
   { name: "Balinese Massage", description: "Gentle stretching, acupressure, reflexology and aromatherapy with warm oils to calm the nervous system and restore energy.", duration: null, price: null, image: balinese, alt: "Therapist giving a Balinese massage with warm oil in a tropical spa room" },
+  { name: "Herbal Compress Massage", description: "Warm cloth bundles of Thai herbs are pressed and rolled over the back and shoulders to ease tightness.", duration: null, price: null, image: herbalCompressTx, alt: "Therapist pressing warm herbal compress bundles on a client's back" },
+  { name: "Head, Scalp & Shoulder Massage", description: "Focused work through the scalp, neck and shoulders — a good choice after long screen days.", duration: null, price: null, image: scalpMassage, alt: "Therapist massaging a relaxed client's scalp" },
+  { name: "Prenatal Massage", description: "Side-lying support with cushions and gentle, steady pressure for mums-to-be. Please tell us how far along you are.", duration: null, price: null, image: prenatalMassage, alt: "Pregnant client supported by cushions receiving a gentle shoulder massage" },
+  { name: "Thai Facial Massage", description: "Light pressure across the face, temples and forehead to leave the skin and the mind feeling calmer.", duration: null, price: null, image: facialMassage, alt: "Therapist gently massaging a client's forehead and temples" },
+  { name: "Lymphatic Drainage Massage", description: "Slow, light rhythmic strokes that encourage circulation — often chosen for heavy or puffy legs.", duration: null, price: null, image: lymphaticMassage, alt: "Therapist performing slow light strokes on a client's legs" },
+  { name: "Neck & Shoulder Relief", description: "Targeted thumb pressure on the neck and shoulders while you stay seated and clothed — quick and effective.", duration: null, price: null, image: neckShoulder, alt: "Therapist working on the shoulders of a seated clothed client" },
+  { name: "Salt & Herbal Body Scrub", description: "A coarse salt and herb polish to smooth the skin, finished with a warm rinse and light oil.", duration: null, price: null, image: bodyScrub, alt: "Bowls of sea salt, dried herbs and scrub ingredients on a stone shelf" },
+  { name: "Shiatsu Massage", description: "Rhythmic thumb pressure along the back while you stay fully clothed on a mat, in the Japanese tradition.", duration: null, price: null, image: shiatsuMassage, alt: "Clothed client on a floor mat receiving thumb pressure along the back" },
+  { name: "Postnatal Recovery Massage", description: "Gentle leg, foot and back care for new mums, with time for feeding breaks whenever you need them.", duration: null, price: null, image: postnatalMassage, alt: "Seated clothed client resting her feet in a wooden basin while a therapist supports her leg" },
+  { name: "Assisted Stretch & Mobility", description: "A therapist guides you through slow, supported stretches to improve range of movement and ease stiffness.", duration: null, price: null, image: stretchSession, alt: "Therapist guiding a clothed client through a gentle leg stretch on a mat" },
+  { name: "Herbal Body Wrap", description: "Warm herbal clay and wraps applied to the skin, then rested under a blanket while you relax.", duration: null, price: null, image: herbalWrap, alt: "Rolled cotton wraps, dried herbs and green clay arranged on a wooden tray" },
+  { name: "Sound Bath Meditation", description: "Live singing bowls in a dim, candle-lit room to help you wind down before or after a treatment.", duration: null, price: null, image: soundBath, alt: "Brass singing bowls and a wooden mallet arranged on cushions in a candle-lit studio" },
 ];
 
 // OWNER: replace with real packages, or remove this section and its nav item if none.
