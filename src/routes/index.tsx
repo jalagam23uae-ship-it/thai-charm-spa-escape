@@ -39,6 +39,18 @@ import couplesSuite from "@/assets/couples-suite.jpg";
 import handRitual from "@/assets/hand-ritual.jpg";
 import gardenPath from "@/assets/garden-path.jpg";
 import loungeTea from "@/assets/lounge-tea.jpg";
+import oilCollection from "@/assets/oil-collection.jpg";
+import towelStack from "@/assets/towel-stack.jpg";
+import floatingFlowers from "@/assets/floating-flowers.jpg";
+import petalTub from "@/assets/petal-tub.jpg";
+import jadeTools from "@/assets/jade-tools.jpg";
+import gardenPavilion from "@/assets/garden-pavilion.jpg";
+import lanternWalk from "@/assets/lantern-walk.jpg";
+import fruitPlatter from "@/assets/fruit-platter.jpg";
+import bathSalts from "@/assets/bath-salts.jpg";
+import massageTools from "@/assets/massage-tools.jpg";
+import incenseLotus from "@/assets/incense-lotus.jpg";
+import footSoak from "@/assets/foot-soak.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -109,6 +121,18 @@ const gallery = [
   { src: handRitual, label: "Hand ritual" },
   { src: gardenPath, label: "Garden path" },
   { src: loungeTea, label: "Tea lounge" },
+  { src: oilCollection, label: "Essential oils" },
+  { src: towelStack, label: "Fresh towels" },
+  { src: floatingFlowers, label: "Floating flowers" },
+  { src: petalTub, label: "Petal bath" },
+  { src: jadeTools, label: "Jade tools" },
+  { src: gardenPavilion, label: "Garden pavilion" },
+  { src: lanternWalk, label: "Lantern walk" },
+  { src: fruitPlatter, label: "Fruit platter" },
+  { src: bathSalts, label: "Bath salts" },
+  { src: massageTools, label: "Massage tools" },
+  { src: incenseLotus, label: "Incense & lotus" },
+  { src: footSoak, label: "Foot soak" },
 ];
 
 const faqs = [
