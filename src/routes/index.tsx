@@ -204,6 +204,8 @@ function Tilt({ children, className, max = 7 }: { children: ReactNode; className
     cancelAnimationFrame(frame.current);
     frame.current = requestAnimationFrame(() => {
       el.style.transform = `perspective(900px) rotateX(${(-y * max).toFixed(2)}deg) rotateY(${(x * max).toFixed(2)}deg) translateY(-6px)`;
+      el.style.setProperty("--glare-x", `${((x + 0.5) * 100).toFixed(1)}%`);
+      el.style.setProperty("--glare-y", `${((y + 0.5) * 100).toFixed(1)}%`);
     });
   };
   const onLeave = () => {
@@ -314,7 +316,7 @@ function Index() {
           </div>
           <div className="relative z-10 mx-auto max-w-3xl px-5 py-32 text-center text-hero-foreground">
             <p className="reveal text-xs font-bold uppercase tracking-[0.35em]">Thai Charm Spa</p>
-            <h1 className="reveal mt-6 text-5xl leading-[1.1] md:text-7xl" style={{ transitionDelay: "120ms" }}>Relax. Restore. Reconnect.</h1>
+            <h1 className="text-3d reveal mt-6 text-5xl leading-[1.1] md:text-7xl" style={{ transitionDelay: "120ms" }}>Relax. Restore. Reconnect.</h1>
             <p className="reveal mx-auto mt-6 max-w-md text-lg text-hero-foreground/85" style={{ transitionDelay: "240ms" }}>Make time for yourself at Thai Charm Spa.</p>
             <div className="reveal mt-10 flex flex-wrap justify-center gap-3" style={{ transitionDelay: "360ms" }}>
               <a href="#treatments" className="rounded-full border border-hero-foreground/60 px-7 py-3 text-sm font-medium text-hero-foreground transition-all hover:bg-hero-foreground/10">Explore Treatments</a>
@@ -326,8 +328,10 @@ function Index() {
           </a>
         </section>
 
-        <section id="treatments" className="bg-sage/50 py-24">
-          <div className="mx-auto max-w-6xl px-5">
+        <section id="treatments" className="relative overflow-hidden bg-sage/50 py-24">
+          <div className="orb -left-24 top-24 h-72 w-72 bg-primary/25" aria-hidden />
+          <div className="orb -right-20 bottom-16 h-80 w-80 bg-accent" style={{ animationDelay: "2s" }} aria-hidden />
+          <div className="relative mx-auto max-w-6xl px-5">
             <SectionHeading eyebrow="Treatment menu" title="Treatments" intro="Choose an experience and send us a request — we'll reply with available times." />
             <p className="reveal mb-10 text-center"><Placeholder>Preview: proposed treatments — owner to confirm</Placeholder></p>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -359,8 +363,10 @@ function Index() {
           </div>
         </section>
 
-        <section id="packages" className="py-24">
-          <div className="mx-auto max-w-6xl px-5">
+        <section id="packages" className="relative overflow-hidden py-24">
+          <div className="orb -right-24 top-10 h-72 w-72 bg-sage" aria-hidden />
+          <div className="orb -left-20 bottom-10 h-64 w-64 bg-primary/20" style={{ animationDelay: "3s" }} aria-hidden />
+          <div className="relative mx-auto max-w-6xl px-5">
             <SectionHeading eyebrow="Combine & unwind" title="Packages" />
             <p className="reveal mb-10 text-center"><Placeholder>Draft: package details to be supplied by owner</Placeholder></p>
             <div className="grid gap-8 md:grid-cols-3">
@@ -398,8 +404,9 @@ function Index() {
           </div>
         </section>
 
-        <section id="gallery" className="py-24">
-          <div className="mx-auto max-w-6xl px-5">
+        <section id="gallery" className="relative overflow-hidden py-24">
+          <div className="orb -left-24 top-1/3 h-80 w-80 bg-accent" style={{ animationDelay: "1s" }} aria-hidden />
+          <div className="relative mx-auto max-w-6xl px-5">
             <SectionHeading eyebrow="The atmosphere" title="Gallery" intro="A glimpse of the calm that waits for you." />
             <div className="reveal columns-2 gap-4 md:columns-3 [&>figure]:mb-4">
               {gallery.map((g, i) => (
@@ -447,7 +454,9 @@ function Index() {
                   );
                 })}
               </ul>
-              <div className="reveal relative flex flex-col justify-center gap-4 overflow-hidden rounded-3xl p-8" style={{ transitionDelay: "120ms" }}>
+              <div className="reveal" style={{ transitionDelay: "120ms" }}>
+              <Tilt max={4} className="h-full">
+              <div className="relative flex h-full flex-col justify-center gap-4 overflow-hidden rounded-3xl p-8">
                 <img src={footRitual} alt="" width={1024} height={1024} loading="lazy" className="absolute inset-0 h-full w-full object-cover" aria-hidden />
                 <div className="absolute inset-0 bg-hero-overlay" aria-hidden />
                 <div className="relative z-10 flex flex-col gap-4">
@@ -459,6 +468,8 @@ function Index() {
                   </div>
                   {!wa && <p className="text-center text-xs text-hero-foreground/80">Buttons become active once contact details are added.</p>}
                 </div>
+              </div>
+              </Tilt>
               </div>
             </div>
           </div>

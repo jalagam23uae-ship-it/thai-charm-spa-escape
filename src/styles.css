@@ -202,6 +202,38 @@
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-14px); }
   }
+
+  /* Cursor-following light glare on 3D tilt cards (position set inline via --glare-x/y) */
+  .tilt { position: relative; }
+  .tilt::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 1.5rem;
+    background: radial-gradient(500px circle at var(--glare-x, 50%) var(--glare-y, 50%), oklch(1 0 0 / 0.16), transparent 45%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+  }
+  .tilt:hover::after { opacity: 1; }
+
+  /* Layered shadow stack gives the hero headline a subtle 3D depth */
+  .text-3d {
+    text-shadow:
+      0 1px 0 oklch(0.2 0.03 150 / 0.3),
+      0 2px 0 oklch(0.2 0.03 150 / 0.22),
+      0 14px 34px oklch(0 0 0 / 0.4);
+  }
+
+  /* Soft blurred color orbs drifting behind sections for ambient depth */
+  .orb {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(70px);
+    opacity: 0.55;
+    pointer-events: none;
+    animation: float-y 9s ease-in-out infinite;
+  }
   /* Hero background parallax base scale so edges never show while drifting */
   .hero-parallax {
     transform: scale(1.08);
@@ -211,9 +243,10 @@
 
   @media (prefers-reduced-motion: reduce) {
     .reveal { opacity: 1; transform: none; transition: none; }
-    .float-slow, .float-slower { animation: none; }
+    .float-slow, .float-slower, .orb { animation: none; }
     .tilt, .tilt-hover, .hero-parallax { transition: none; }
     .tilt-hover:hover { transform: none; }
+    .tilt::after { display: none; }
   }
   h1, h2, h3 { font-family: var(--font-display); }
   body {
