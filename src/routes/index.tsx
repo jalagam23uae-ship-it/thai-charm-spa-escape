@@ -63,6 +63,18 @@ import postnatalMassage from "@/assets/postnatal-massage.jpg";
 import stretchSession from "@/assets/stretch-session.jpg";
 import herbalWrap from "@/assets/herbal-wrap.jpg";
 import soundBath from "@/assets/sound-bath.jpg";
+import abhyanga from "@/assets/abhyanga-massage.jpg";
+import cupping from "@/assets/cupping-therapy.jpg";
+import guaSha from "@/assets/gua-sha-therapy.jpg";
+import bambooTools from "@/assets/bamboo-massage-tools.jpg";
+import candleOil from "@/assets/candle-oil-massage.jpg";
+import coffeePolish from "@/assets/coffee-coconut-polish.jpg";
+import jadeRoller from "@/assets/jade-roller-facial.jpg";
+import reiki from "@/assets/reiki-session.jpg";
+import steamInhalation from "@/assets/herbal-steam-inhalation.jpg";
+import dryBrushing from "@/assets/dry-brushing.jpg";
+import coolingLeg from "@/assets/cooling-leg-treatment.jpg";
+import eyePillow from "@/assets/eye-pillow-ritual.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -107,6 +119,18 @@ const treatments: Treatment[] = [
   { name: "Assisted Stretch & Mobility", description: "A therapist guides you through slow, supported stretches to improve range of movement and ease stiffness.", duration: null, price: null, image: stretchSession, alt: "Therapist guiding a clothed client through a gentle leg stretch on a mat" },
   { name: "Herbal Body Wrap", description: "Warm herbal clay and wraps applied to the skin, then rested under a blanket while you relax.", duration: null, price: null, image: herbalWrap, alt: "Rolled cotton wraps, dried herbs and green clay arranged on a wooden tray" },
   { name: "Sound Bath Meditation", description: "Live singing bowls in a dim, candle-lit room to help you wind down before or after a treatment.", duration: null, price: null, image: soundBath, alt: "Brass singing bowls and a wooden mallet arranged on cushions in a candle-lit studio" },
+  { name: "Ayurvedic Abhyanga Massage", description: "Long, soothing strokes with warm herbal oil poured slowly over the back and shoulders.", duration: null, price: null, image: abhyanga, alt: "Therapist pouring warm oil from a brass vessel over a towel-covered client's back" },
+  { name: "Cupping Therapy", description: "Gentle silicone cups lift and release tight muscle across the back and shoulders.", duration: null, price: null, image: cupping, alt: "Clear silicone cupping cups arranged along a client's towel-covered back" },
+  { name: "Gua Sha Body Therapy", description: "A smooth jade tool is glided over oiled skin to ease tension and encourage circulation.", duration: null, price: null, image: guaSha, alt: "Therapist gliding a green jade gua sha tool over a client's shoulder" },
+  { name: "Bamboo Stick Massage", description: "Warm bamboo sticks of different sizes roll and press along the back for deep, even pressure.", duration: null, price: null, image: bambooTools, alt: "Bundle of polished bamboo massage sticks resting on folded towels beside a dish of oil" },
+  { name: "Warm Candle Oil Massage", description: "Skin-warm candle oil is poured and massaged over the shoulders for a soft, aromatic finish.", duration: null, price: null, image: candleOil, alt: "Therapist pouring warm oil from a lit massage candle onto a towel-covered back" },
+  { name: "Coffee & Coconut Body Polish", description: "Ground coffee and coconut polish smooth the skin, rinsed warm and finished with light oil.", duration: null, price: null, image: coffeePolish, alt: "Wooden tray with coffee grounds, halved coconut, sea salt and coconut oil" },
+  { name: "Jade Roller Facial", description: "A cool jade roller glides over the face to de-puff the skin and calm the mind.", duration: null, price: null, image: jadeRoller, alt: "Therapist rolling a green jade facial roller over a relaxed client's cheek" },
+  { name: "Reiki Energy Balancing", description: "Hands held gently above a fully clothed body in a quiet, candle-lit room to help you settle.", duration: null, price: null, image: reiki, alt: "Practitioner holding hands above a fully clothed client on a table beside candles and a singing bowl" },
+  { name: "Herbal Steam Inhalation", description: "Warm lemongrass and lime steam breathed in to open the sinuses and quiet the head.", duration: null, price: null, image: steamInhalation, alt: "Ceramic bowl of steaming lemongrass, lime leaf and ginger infusion beside a folded towel" },
+  { name: "Dry Brushing Ritual", description: "A natural bristle brush wakes the skin before your treatment, finished with a light oil.", duration: null, price: null, image: dryBrushing, alt: "Wooden dry brush on a folded towel beside loofah, body oil and dried herbs" },
+  { name: "Cooling Mint Leg & Foot Treatment", description: "Menthol gel cools heavy legs and tired feet, with light pressure through the calves.", duration: null, price: null, image: coolingLeg, alt: "Therapist smoothing pale green menthol gel over a client's calf resting on a rolled towel" },
+  { name: "Aromatherapy Eye Pillow Ritual", description: "A warm lavender eye pillow rests over the eyes while you lie back and let go.", duration: null, price: null, image: eyePillow, alt: "Therapist placing a lavender eye pillow over a relaxed client's eyes in candlelight" },
 ];
 
 // OWNER: replace with real packages, or remove this section and its nav item if none.
