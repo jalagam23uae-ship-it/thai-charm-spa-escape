@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Menu, X, Phone, Mail, MapPin, Clock, MessageCircle, Leaf, ArrowDown, Facebook, Instagram, Twitter } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { contact, whatsappLink, treatmentMessage, type Treatment } from "@/lib/spa-config";
+import { contact, whatsappLink, treatmentMessage, mapsLink, type Treatment } from "@/lib/spa-config";
 import heroWide from "@/assets/hero-wide.jpg";
 import hero from "@/assets/hero.jpg";
 import thai from "@/assets/thai-massage.jpg";
@@ -488,7 +488,7 @@ function Index() {
                   <div className="grid gap-4 sm:grid-cols-3">
                     <ActionLink href={tel} variant="outline">Call Us</ActionLink>
                     <ActionLink href={mail} variant="outline">Email Us</ActionLink>
-                    <ActionLink href={contact.mapUrl} variant="outline" external>Get Directions</ActionLink>
+                    <ActionLink href={contact.mapUrl ?? mapsLink(contact.address)} variant="outline" external>Get Directions</ActionLink>
                   </div>
                   {!wa && <p className="text-center text-xs text-hero-foreground/80">Buttons become active once contact details are added.</p>}
                 </div>

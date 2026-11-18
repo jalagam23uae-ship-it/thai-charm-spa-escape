@@ -23,5 +23,11 @@ export function treatmentMessage(name: string) {
   return `Hello Thai Charm Spa, I would like to request an appointment for ${name}. Please share your available times.`;
 }
 
+// Directions link derived from the address the owner supplies; never invented.
+export function mapsLink(address: string | null): string | null {
+  if (!address) return null;
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+}
+
 // OWNER: confirm each treatment, then fill duration and price (e.g. "60 min", "THB 800").
 export type Treatment = { name: string; description: string; duration: string | null; price: string | null; image: string; alt: string };
