@@ -75,6 +75,18 @@ import steamInhalation from "@/assets/herbal-steam-inhalation.jpg";
 import dryBrushing from "@/assets/dry-brushing.jpg";
 import coolingLeg from "@/assets/cooling-leg-treatment.jpg";
 import eyePillow from "@/assets/eye-pillow-ritual.jpg";
+import herbalSteamBath from "@/assets/herbal-steam-bath.jpg";
+import sugarLimePolish from "@/assets/sugar-lime-polish.jpg";
+import champiHairRitual from "@/assets/champi-hair-ritual.jpg";
+import aromatherapyFootSoak from "@/assets/aromatherapy-foot-soak.jpg";
+import coolGlobeFacial from "@/assets/cool-globe-facial.jpg";
+import seatedChairMassage from "@/assets/seated-chair-massage.jpg";
+import hotTowelRitual from "@/assets/hot-towel-ritual.jpg";
+import himalayanSaltTherapy from "@/assets/himalayan-salt-therapy.jpg";
+import guidedMeditation from "@/assets/guided-meditation.jpg";
+import footReflexologyTools from "@/assets/foot-reflexology-tools.jpg";
+import roseMilkBath from "@/assets/rose-milk-bath.jpg";
+import sheaHandRitual from "@/assets/shea-hand-ritual.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -131,6 +143,18 @@ const treatments: Treatment[] = [
   { name: "Dry Brushing Ritual", description: "A natural bristle brush wakes the skin before your treatment, finished with a light oil.", duration: null, price: null, image: dryBrushing, alt: "Wooden dry brush on a folded towel beside loofah, body oil and dried herbs" },
   { name: "Cooling Mint Leg & Foot Treatment", description: "Menthol gel cools heavy legs and tired feet, with light pressure through the calves.", duration: null, price: null, image: coolingLeg, alt: "Therapist smoothing pale green menthol gel over a client's calf resting on a rolled towel" },
   { name: "Aromatherapy Eye Pillow Ritual", description: "A warm lavender eye pillow rests over the eyes while you lie back and let go.", duration: null, price: null, image: eyePillow, alt: "Therapist placing a lavender eye pillow over a relaxed client's eyes in candlelight" },
+  { name: "Thai Herbal Steam Bath", description: "A cedar steam room filled with eucalyptus and lemongrass to open the airways and soften the skin.", duration: null, price: null, image: herbalSteamBath, alt: "Woven basket of steaming eucalyptus and lemongrass on a cedar bench in a wooden steam room" },
+  { name: "Sugar & Lime Body Polish", description: "Coarse sugar and lime buff away dull skin, leaving the body smooth and lightly scented.", duration: null, price: null, image: sugarLimePolish, alt: "Glass bowl of sugar scrub with lime halves and mint on a wooden tray" },
+  { name: "Champi Hair & Scalp Ritual", description: "Warm oil is poured through the hair while the scalp is massaged slowly until the head lets go.", duration: null, price: null, image: champiHairRitual, alt: "Therapist pouring warm oil over a client's scalp during a champi hair ritual" },
+  { name: "Aromatherapy Foot Soak", description: "Feet rest in a copper basin of warm water, rose petals and lemongrass before the massage begins.", duration: null, price: null, image: aromatherapyFootSoak, alt: "Copper basin of warm water with floating rose petals, pumice stone and rolled towels" },
+  { name: "Cool Globe Facial", description: "Chilled glass globes glide over the face to wake the skin and calm redness.", duration: null, price: null, image: coolGlobeFacial, alt: "Esthetician rolling chilled glass globes over a client's cheek" },
+  { name: "Seated Chair Massage", description: "A short, fully clothed session in a chair that frees the shoulders and the neck.", duration: null, price: null, image: seatedChairMassage, alt: "Therapist working the shoulders of a clothed client seated in a wooden massage chair" },
+  { name: "Hot Towel Neck Ritual", description: "Steaming eucalyptus towels are wrapped around the neck and shoulders to melt tension.", duration: null, price: null, image: hotTowelRitual, alt: "Steaming rolled towels with eucalyptus sprigs on a wooden tray" },
+  { name: "Himalayan Salt Therapy", description: "Sit in warm salt light, breathe slowly and let the shoulders drop.", duration: null, price: null, image: himalayanSaltTherapy, alt: "Himalayan salt lamps and pink salt crystals glowing on a wooden shelf" },
+  { name: "Guided Meditation & Breathing", description: "A quiet guided session on a floor cushion to slow the breath before or after a treatment.", duration: null, price: null, image: guidedMeditation, alt: "Client sitting cross-legged on a floor cushion in a candle-lit spa studio" },
+  { name: "Foot Reflexology Tools", description: "Wooden sticks and a jade roller press the reflex points across the sole of the foot.", duration: null, price: null, image: footReflexologyTools, alt: "Wooden foot massage sticks and a jade roller on a folded towel beside a bowl of oil" },
+  { name: "Rose & Milk Bath Soak", description: "A warm milky bath scattered with rose petals to soften the skin and settle the mind.", duration: null, price: null, image: roseMilkBath, alt: "Porcelain bathtub filled with milky water and rose petals, candles glowing on the rim" },
+  { name: "Shea Hand & Nail Ritual", description: "Shea butter worked into the hands, cuticles and nails for a soft, nourished finish.", duration: null, price: null, image: sheaHandRitual, alt: "Therapist massaging cream into a client's hand over a folded towel" },
 ];
 
 // OWNER: replace with real packages, or remove this section and its nav item if none.
