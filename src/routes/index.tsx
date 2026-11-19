@@ -87,6 +87,36 @@ import guidedMeditation from "@/assets/guided-meditation.jpg";
 import footReflexologyTools from "@/assets/foot-reflexology-tools.jpg";
 import roseMilkBath from "@/assets/rose-milk-bath.jpg";
 import sheaHandRitual from "@/assets/shea-hand-ritual.jpg";
+import gingerCharcoalWrap from "@/assets/ginger-charcoal-wrap.jpg";
+import lemongrassBodyOil from "@/assets/lemongrass-body-oil.jpg";
+import cocoaButterTreatment from "@/assets/cocoa-butter-treatment.jpg";
+import greenTeaCompressFacial from "@/assets/green-tea-compress-facial.jpg";
+import lavenderSleepRitual from "@/assets/lavender-sleep-ritual.jpg";
+import turmericHoneyMask from "@/assets/turmeric-honey-mask.jpg";
+import herbalPoultice from "@/assets/herbal-poultice.jpg";
+import coconutHairOil from "@/assets/coconut-hair-oil.jpg";
+import seaSaltFootScrub from "@/assets/sea-salt-foot-scrub.jpg";
+import aromatherapyDiffuser from "@/assets/aromatherapy-diffuser.jpg";
+import facialTools from "@/assets/facial-tools.jpg";
+import papayaYogurtFacial from "@/assets/papaya-yogurt-facial.jpg";
+import coldMarbleTherapy from "@/assets/cold-marble-therapy.jpg";
+import lotusBloomBath from "@/assets/lotus-bloom-bath.jpg";
+import herbalTeaRest from "@/assets/herbal-tea-rest.jpg";
+import seaweedBodyWrap from "@/assets/seaweed-body-wrap.jpg";
+import clayDetoxWrap from "@/assets/clay-detox-wrap.jpg";
+import riceBranPolish from "@/assets/rice-bran-polish.jpg";
+import rollerBottles from "@/assets/roller-bottles.jpg";
+import footBalmSocks from "@/assets/foot-balm-socks.jpg";
+import bambooLeafCompress from "@/assets/bamboo-leaf-compress.jpg";
+import orangeGingerOil from "@/assets/orange-ginger-oil.jpg";
+import rosewaterFaceMist from "@/assets/rosewater-face-mist.jpg";
+import wheatEyePack from "@/assets/wheat-eye-pack.jpg";
+import kaffirLimeTonic from "@/assets/kaffir-lime-tonic.jpg";
+import aloeMintGel from "@/assets/aloe-mint-gel.jpg";
+import couplesSuiteRitual from "@/assets/couples-suite-ritual.jpg";
+import cinnamonWarmingScrub from "@/assets/cinnamon-warming-scrub.jpg";
+import vanillaAlmondOil from "@/assets/vanilla-almond-oil.jpg";
+import tamarindBodyPolish from "@/assets/tamarind-body-polish.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -155,6 +185,36 @@ const treatments: Treatment[] = [
   { name: "Foot Reflexology Tools", description: "Wooden sticks and a jade roller press the reflex points across the sole of the foot.", duration: null, price: null, image: footReflexologyTools, alt: "Wooden foot massage sticks and a jade roller on a folded towel beside a bowl of oil" },
   { name: "Rose & Milk Bath Soak", description: "A warm milky bath scattered with rose petals to soften the skin and settle the mind.", duration: null, price: null, image: roseMilkBath, alt: "Porcelain bathtub filled with milky water and rose petals, candles glowing on the rim" },
   { name: "Shea Hand & Nail Ritual", description: "Shea butter worked into the hands, cuticles and nails for a soft, nourished finish.", duration: null, price: null, image: sheaHandRitual, alt: "Ceramic bowl of whipped shea butter with a wooden spoon, rose petals and a dish of oil on a folded towel" },
+  { name: "Thai Ginger & Charcoal Body Wrap", description: "A warming clay-and-ginger paste applied to the body to draw out tension.", duration: null, price: null, image: gingerCharcoalWrap, alt: "Stoneware bowl of dark charcoal and ginger paste with grated ginger on a wooden tray" },
+  { name: "Lemongrass Body Oil Massage", description: "Fresh lemongrass oil worked in long, even strokes to calm and warm the muscles.", duration: null, price: null, image: lemongrassBodyOil, alt: "Glass bottle of golden lemongrass oil with fresh stalks and a dish of oil on a folded towel" },
+  { name: "Cocoa Butter Body Treatment", description: "Rich cocoa butter melts over the skin, leaving it deep-soft and lightly scented.", duration: null, price: null, image: cocoaButterTreatment, alt: "Chunks of pale cocoa butter and a halved cocoa pod on a dark wooden tray" },
+  { name: "Green Tea Compress Facial", description: "Warm green tea cloths rest over the face to soothe and tighten the skin.", duration: null, price: null, image: greenTeaCompressFacial, alt: "Ceramic bowl of warm green tea compress cloths with loose leaves and cotton pads" },
+  { name: "Lavender Sleep Ritual", description: "A quiet, lavender-scented wind-down with warm light and soft textures.", duration: null, price: null, image: lavenderSleepRitual, alt: "Dried lavender bundle, eye pillow, amber lamp and folded blanket in a warm room" },
+  { name: "Turmeric & Honey Facial Mask", description: "Golden turmeric and honey mask brightens the skin, rinsed clean and set with light oil.", duration: null, price: null, image: turmericHoneyMask, alt: "Ceramic bowl of golden turmeric and honey mask with honey dipper and fresh turmeric root" },
+  { name: "Thai Herbal Poultice Massage", description: "Warm cloth-wrapped herbal balls knead and press the back and limbs.", duration: null, price: null, image: herbalPoultice, alt: "Two cloth-wrapped steaming herbal poultice balls on a dark wooden tray with dried herbs" },
+  { name: "Coconut Hair Oil Treatment", description: "Warm coconut oil worked through the hair and scalp, left in to soften and shine.", duration: null, price: null, image: coconutHairOil, alt: "Halved young coconut with a glass bottle of coconut hair oil and shavings on a wooden tray" },
+  { name: "Sea Salt Foot Scrub", description: "Coarse sea salt scrubs away tired feet, finished with a light oil.", duration: null, price: null, image: seaSaltFootScrub, alt: "Wooden bowl of coarse sea salt scrub with pumice stone, oil and lime slices" },
+  { name: "Aromatherapy Mist & Breathwork", description: "A gentle essential-oil mist and guided breathing to settle the mind.", duration: null, price: null, image: aromatherapyDiffuser, alt: "Ceramic aromatherapy diffuser releasing mist with amber oil bottles and eucalyptus" },
+  { name: "Jade & Rose Quartz Facial Tools", description: "Smooth jade and rose quartz tools glide over the face to de-puff and calm.", duration: null, price: null, image: facialTools, alt: "Green jade and pink rose quartz roller, gua sha stone and cup on a folded towel" },
+  { name: "Papaya & Yogurt Facial", description: "Ripe papaya and yogurt mask smooths and brightens the complexion.", duration: null, price: null, image: papayaYogurtFacial, alt: "Slices of ripe papaya beside a ceramic bowl of thick yogurt facial mask" },
+  { name: "Cold Marble Therapy", description: "Cool polished marble slabs rest on the body to ease inflammation and tension.", duration: null, price: null, image: coldMarbleTherapy, alt: "Three polished pale green marble slabs stacked on a folded towel with oil and eucalyptus" },
+  { name: "Lotus Bloom Bath", description: "A warm bath scattered with lotus blossoms to calm the mind and soften the skin.", duration: null, price: null, image: lotusBloomBath, alt: "Wide porcelain basin with floating pink lotus blossoms" },
+  { name: "Herbal Tea & Rest Ritual", description: "A pot of herbal tea and a quiet rest to finish the session slowly.", duration: null, price: null, image: herbalTeaRest, alt: "Ceramic teapot and cup of herbal tea on a wooden tray with honey and chamomile" },
+  { name: "Seaweed Body Wrap", description: "Dried seaweed paste wrapped over the body to draw out toxins and nourish.", duration: null, price: null, image: seaweedBodyWrap, alt: "Dried seaweed sheets and a bowl of green seaweed wrap paste on a dark tray" },
+  { name: "Green Clay Detox Wrap", description: "Green clay paste applied to the body to purify and tighten the skin.", duration: null, price: null, image: clayDetoxWrap, alt: "Ceramic bowl of green detox clay paste with wooden spatula and dried herbs" },
+  { name: "Rice Bran Body Polish", description: "Fine rice bran and oil buff the skin to a soft, natural glow.", duration: null, price: null, image: riceBranPolish, alt: "Wooden bowl of rice bran polish with scattered rice grains, oil and a wooden spoon" },
+  { name: "Essential Oil Roll-On Ritual", description: "Light essential-oil roll-ons applied to pulse points for a lasting calm.", duration: null, price: null, image: rollerBottles, alt: "Three small glass roll-on bottles of essential oil blend on a stone tray with lavender" },
+  { name: "Foot Balm & Warm Socks Ritual", description: "A nourishing balm worked into the feet, then warm socks to rest.", duration: null, price: null, image: footBalmSocks, alt: "Open tin of mint foot balm with a wooden spatula beside folded cream cotton socks" },
+  { name: "Bamboo Leaf Compress", description: "Warm bamboo-leaf compresses rest on the body to ease stiffness.", duration: null, price: null, image: bambooLeafCompress, alt: "Fresh green bamboo leaves wrapped into a cloth compress bundle with steam rising" },
+  { name: "Orange & Ginger Body Oil", description: "Bright orange and warming ginger oil worked in to energise the skin.", duration: null, price: null, image: orangeGingerOil, alt: "Glass bottle of orange and ginger body oil with orange slices and grated ginger" },
+  { name: "Rosewater Face Mist", description: "A fine rosewater mist settles the face and preps the skin.", duration: null, price: null, image: rosewaterFaceMist, alt: "Small glass spray bottle of rosewater beside a bowl of pink rose petals" },
+  { name: "Warm Wheat Eye & Neck Pack", description: "Warm wheat packs rest over the eyes and neck to melt tension.", duration: null, price: null, image: wheatEyePack, alt: "Quilted cotton wheat eye and neck pack on a folded cream towel with lavender" },
+  { name: "Kaffir Lime Scalp Tonic", description: "Cooling kaffir lime tonic poured over the scalp to refresh and soothe.", duration: null, price: null, image: kaffirLimeTonic, alt: "Kaffir limes, sliced halves and a small glass bottle of scalp tonic on a wooden tray" },
+  { name: "Aloe & Mint Soothing Gel", description: "Cool aloe and mint gel calms sun-tired or overheated skin.", duration: null, price: null, image: aloeMintGel, alt: "Split aloe vera leaf with clear gel in a glass bowl and fresh mint leaves" },
+  { name: "Private Couples Suite Ritual", description: "Two side-by-side tables, petals and warm light for a shared session.", duration: null, price: null, image: couplesSuiteRitual, alt: "Private couples treatment room with two massage tables draped in white linens and candles" },
+  { name: "Cinnamon Warming Scrub", description: "Cinnamon and sugar scrub warms the skin and boosts circulation.", duration: null, price: null, image: cinnamonWarmingScrub, alt: "Cinnamon sticks and a wooden bowl of warm brown sugar scrub with star anise" },
+  { name: "Vanilla & Almond Massage Oil", description: "Soft vanilla and almond oil massaged in for a calm, nourishing finish.", duration: null, price: null, image: vanillaAlmondOil, alt: "Glass bottle of vanilla and almond massage oil with almonds and vanilla pods" },
+  { name: "Tamarind Body Polish", description: "Tamarind polish gently buffs dull skin for a smooth, even finish.", duration: null, price: null, image: tamarindBodyPolish, alt: "Tamarind pods and a ceramic bowl of brown tamarind body polish with a wooden spatula" },
 ];
 
 // OWNER: replace with real packages, or remove this section and its nav item if none.
