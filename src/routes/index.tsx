@@ -482,7 +482,7 @@ function Index() {
                 <div key={i} className="reveal" style={{ transitionDelay: `${i * 100}ms` }}>
                 <Tilt max={9} className="h-full">
                 <article className={`h-full rounded-3xl border p-8 text-center ${i === 1 ? "border-primary/30 bg-card shadow-[var(--shadow-soft)]" : "border-border bg-card"}`}>
-                  <h3 className="text-2xl">{p.name} {i + 1}</h3>
+                  <h3 className="text-2xl">{p.name}</h3>
                   <p className="mt-3 text-sm text-muted-foreground">{p.includes}</p>
                   <p className="mt-6 text-sm">{p.duration ?? <Placeholder>Total duration TBC</Placeholder>}</p>
                   <p className="mt-2 font-bold">{p.price ?? <Placeholder>Price TBC</Placeholder>}</p>
