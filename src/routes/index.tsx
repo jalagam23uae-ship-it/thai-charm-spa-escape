@@ -154,7 +154,7 @@ const treatments: Treatment[] = [
   { name: "Guided Meditation & Breathing", description: "A quiet guided session on a floor cushion to slow the breath before or after a treatment.", duration: null, price: null, image: guidedMeditation, alt: "Client sitting cross-legged on a floor cushion in a candle-lit spa studio" },
   { name: "Foot Reflexology Tools", description: "Wooden sticks and a jade roller press the reflex points across the sole of the foot.", duration: null, price: null, image: footReflexologyTools, alt: "Wooden foot massage sticks and a jade roller on a folded towel beside a bowl of oil" },
   { name: "Rose & Milk Bath Soak", description: "A warm milky bath scattered with rose petals to soften the skin and settle the mind.", duration: null, price: null, image: roseMilkBath, alt: "Porcelain bathtub filled with milky water and rose petals, candles glowing on the rim" },
-  { name: "Shea Hand & Nail Ritual", description: "Shea butter worked into the hands, cuticles and nails for a soft, nourished finish.", duration: null, price: null, image: sheaHandRitual, alt: "Therapist massaging cream into a client's hand over a folded towel" },
+  { name: "Shea Hand & Nail Ritual", description: "Shea butter worked into the hands, cuticles and nails for a soft, nourished finish.", duration: null, price: null, image: sheaHandRitual, alt: "Ceramic bowl of whipped shea butter with a wooden spoon, rose petals and a dish of oil on a folded towel" },
 ];
 
 // OWNER: replace with real packages, or remove this section and its nav item if none.
@@ -355,7 +355,7 @@ function Index() {
           <div className="absolute inset-0 bg-hero-overlay" aria-hidden />
           {/* Floating glass badges add depth above the parallax backdrop */}
           <div className="glass float-slow absolute left-[8%] top-[28%] z-10 hidden rounded-2xl px-5 py-4 text-hero-foreground shadow-[var(--shadow-soft)] lg:block" aria-hidden>
-            <p className="font-display text-3xl font-semibold">22</p>
+            <p className="font-display text-3xl font-semibold">{treatments.length}</p>
             <p className="text-xs uppercase tracking-widest text-hero-foreground/80">Treatments</p>
           </div>
           <div className="glass float-slower absolute bottom-[24%] right-[7%] z-10 hidden rounded-2xl px-5 py-4 text-hero-foreground shadow-[var(--shadow-soft)] lg:block" aria-hidden>
